@@ -6,3 +6,5 @@ scipy==1.8.0
 scikit-image==0.19.2
 pandas==1.4.1
 music21==7.1.0
+black[jupyter]==22.1.0
+flake8==4.0.1

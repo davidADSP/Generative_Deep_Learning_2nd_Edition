@@ -33,9 +33,10 @@ UNKNOWN_TOKEN = _add_word(UNKNOWN_WORD)
 START_TOKEN = _add_word(START_WORD)
 END_TOKEN = _add_word(END_WORD)
 
+
 def get_glove():
-    
-    embeddings_path = './data/glove/glove.6B.100d.trimmed.txt'
+
+    embeddings_path = "./data/glove/glove.6B.100d.trimmed.txt"
 
     with open(embeddings_path) as f:
         line = f.readline()
@@ -44,7 +45,7 @@ def get_glove():
         f.seek(0)
 
         vocab_size = sum(1 for line in f)
-        vocab_size += 4 #3 
+        vocab_size += 4  # 3
         f.seek(0)
 
         glove = np.ndarray((vocab_size, dimensions), dtype=np.float32)
@@ -63,15 +64,12 @@ def get_glove():
     return glove
 
 
-
-
 def look_up_word(word):
     return _word_to_idx.get(word, UNKNOWN_TOKEN)
 
 
 def look_up_token(token):
     return _idx_to_word[token]
-
 
 
 def _tokenize(string):
@@ -190,30 +188,34 @@ def expand_answers(batch, answers):
         if len(split_answers) > 0:
 
             answer_indices = split_answers[0]
-        # for answer_indices in split_answers:
+            # for answer_indices in split_answers:
             document_id = batch["document_ids"][i]
             document_text = batch["document_text"][i]
             document_words = batch["document_words"][i]
             answer_text = " ".join(document_words[i] for i in answer_indices)
-            new_batch.append({
-                "document_id": document_id,
-                "document_text": document_text,
-                "document_words": document_words,
-                "answer_text": answer_text,
-                "answer_indices": answer_indices,
-                "question_text": "",
-                "question_words": [],
-            })
+            new_batch.append(
+                {
+                    "document_id": document_id,
+                    "document_text": document_text,
+                    "document_words": document_words,
+                    "answer_text": answer_text,
+                    "answer_indices": answer_indices,
+                    "question_text": "",
+                    "question_words": [],
+                }
+            )
         else:
-            new_batch.append({
-                "document_id": batch["document_ids"][i],
-                "document_text": batch["document_text"][i],
-                "document_words": batch["document_words"][i],
-                "answer_text": "",
-                "answer_indices": [],
-                "question_text": "",
-                "question_words": [],
-            })
+            new_batch.append(
+                {
+                    "document_id": batch["document_ids"][i],
+                    "document_text": batch["document_text"][i],
+                    "document_words": batch["document_words"][i],
+                    "answer_text": "",
+                    "answer_indices": [],
+                    "question_text": "",
+                    "question_words": [],
+                }
+            )
 
     return _prepare_batch(new_batch)
 
@@ -253,17 +255,17 @@ def _read_data(path):
             answer_text = " ".join(document_words[i] for i in answer_indices)
 
             if len(answer_indices) > 0:
-                existing_stories.append({
-                    "document_id": document_id,
-                    "document_text": document_text,
-                    "document_words": document_words,
-                    "answer_text": answer_text,
-                    "answer_indices": answer_indices,
-                    "question_text": question_text,
-                    "question_words": question_words,
-                })
-
-     
+                existing_stories.append(
+                    {
+                        "document_id": document_id,
+                        "document_text": document_text,
+                        "document_words": document_words,
+                        "answer_text": answer_text,
+                        "answer_indices": answer_indices,
+                        "question_text": question_text,
+                        "question_words": question_words,
+                    }
+                )
 
     return stories
 
@@ -286,18 +288,22 @@ def _process_stories(stories):
 _training_stories = None
 _test_stories = None
 
+
 def _load_training_stories():
     global _training_stories
     _training_stories = _read_data("./data/qa/train.csv")
     return _training_stories
+
 
 def _load_test_stories():
     global _test_stories
     _test_stories = _read_data("./data/qa_test/my_test.csv")
     return _test_stories
 
+
 def training_data():
     return _process_stories(_load_training_stories())
+
 
 def test_data():
     return _process_stories(_load_test_stories())
@@ -307,7 +313,7 @@ def trim_embeddings():
     document_counts = Counter()
     question_counts = Counter()
     for data in [_load_training_stories().values(), _load_test_stories().values()]:
-        
+
         for stories in data:
 
             if len(stories) > 0:
@@ -330,5 +336,5 @@ def trim_embeddings():
                     f2.write(line)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     trim_embeddings()
