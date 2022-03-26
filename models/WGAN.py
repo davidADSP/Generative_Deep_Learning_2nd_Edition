@@ -1,13 +1,12 @@
 
-from keras.layers import Input, Conv2D, Flatten, Dense, Conv2DTranspose, Reshape, Lambda, Activation, BatchNormalization, LeakyReLU, Dropout, ZeroPadding2D, UpSampling2D
-from keras.layers.merge import _Merge
+from tensorflow.keras.layers import Input, Conv2D, Flatten, Dense, Conv2DTranspose, Reshape, Lambda, Activation, BatchNormalization, LeakyReLU, Dropout, ZeroPadding2D, UpSampling2D
 
-from keras.models import Model, Sequential
-from keras import backend as K
-from keras.optimizers import Adam, RMSprop
-from keras.callbacks import ModelCheckpoint 
-from keras.utils import plot_model
-from keras.initializers import RandomNormal
+from tensorflow.keras.models import Model, Sequential
+from tensorflow.keras import backend as K
+from tensorflow.keras.optimizers import Adam, RMSprop
+from tensorflow.keras.callbacks import ModelCheckpoint 
+from tensorflow.keras.utils import plot_model
+from tensorflow.keras.initializers import RandomNormal
 
 import numpy as np
 import json
@@ -368,7 +367,6 @@ class WGAN():
         self.model.save(os.path.join(run_folder, 'model.h5'))
         self.critic.save(os.path.join(run_folder, 'critic.h5'))
         self.generator.save(os.path.join(run_folder, 'generator.h5'))
-        pickle.dump(self, open( os.path.join(run_folder, "obj.pkl"), "wb" ))
 
     def load_weights(self, filepath):
         self.model.load_weights(filepath)

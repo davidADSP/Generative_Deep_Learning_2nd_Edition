@@ -1,21 +1,21 @@
 import pickle
 import os
 
-from keras.datasets import mnist, cifar100,cifar10
-from keras.preprocessing.image import ImageDataGenerator, load_img, save_img, img_to_array
+from tensorflow.keras.datasets import mnist, cifar100,cifar10
+from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, save_img, img_to_array
 
 import pandas as pd
-
+from PIL import Image
 import numpy as np
 from os import walk, getcwd
 import h5py
 
-import scipy
+import imageio
 from glob import glob
 
-from keras.applications import vgg19
-from keras import backend as K
-from keras.utils import to_categorical
+from tensorflow.keras.applications import vgg19
+from tensorflow.keras import backend as K
+from tensorflow.keras.utils import to_categorical
 
 import pdb
 
@@ -70,12 +70,12 @@ class DataLoader():
         for img_path in batch_images:
             img = self.imread(img_path)
             if not is_testing:
-                img = scipy.misc.imresize(img, self.img_res)
+                img = np.array(Image.fromarray(img).resize(self.img_res))
 
                 if np.random.random() > 0.5:
                     img = np.fliplr(img)
             else:
-                img = scipy.misc.imresize(img, self.img_res)
+                img = np.array(Image.fromarray(img).resize(self.img_res))
             imgs.append(img)
 
         imgs = np.array(imgs)/127.5 - 1.
@@ -103,12 +103,12 @@ class DataLoader():
                 img_A = self.imread(img_A)
                 img_B = self.imread(img_B)
 
-                img_A = scipy.misc.imresize(img_A, self.img_res)
-                img_B = scipy.misc.imresize(img_B, self.img_res)
+                img_A = np.array(Image.fromarray(img_A).resize(self.img_res))
+                img_B = np.array(Image.fromarray(img_B).resize(self.img_res))
 
                 if not is_testing and np.random.random() > 0.5:
-                        img_A = np.fliplr(img_A)
-                        img_B = np.fliplr(img_B)
+                    img_A = np.fliplr(img_A)
+                    img_B = np.fliplr(img_B)
 
                 imgs_A.append(img_A)
                 imgs_B.append(img_B)
@@ -120,12 +120,12 @@ class DataLoader():
 
     def load_img(self, path):
         img = self.imread(path)
-        img = scipy.misc.imresize(img, self.img_res)
+        img = np.array(Image.fromarray(img).resize(self.img_res))
         img = img/127.5 - 1.
         return img[np.newaxis, :, :, :]
 
     def imread(self, path):
-        return scipy.misc.imread(path, mode='RGB').astype(np.float)
+        return imageio.imread(path, pilmode='RGB').astype(np.uint8)
 
 
 
@@ -254,7 +254,7 @@ def load_celeb(data_name, image_size, batch_size):
 def load_music(data_name, filename, n_bars, n_steps_per_bar):
     file = os.path.join("./data", data_name, filename)
 
-    with np.load(file, encoding='bytes') as f:
+    with np.load(file, encoding='bytes', allow_pickle = True) as f:
         data = f['train']
 
     data_ints = []

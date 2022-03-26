@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - ./data/:/app/data
+      - ./models/:/app/models
+      - ./utils/:/app/utils
+      - ./notebooks/:/app/notebooks
+      - ./run/:/app/run
+      - ./scripts/:/app/scripts
+    ports:
+        - "8888:8888"
+    entrypoint: jupyter lab --ip 0.0.0.0 --no-browser --allow-root
+    

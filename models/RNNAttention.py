@@ -4,14 +4,14 @@ import glob
 
 from music21 import corpus, converter
 
-from keras.layers import LSTM, Input, Dropout, Dense, Activation, Embedding, Concatenate, Reshape
-from keras.layers import Flatten, RepeatVector, Permute, TimeDistributed
-from keras.layers import Multiply, Lambda, Softmax
-import keras.backend as K 
-from keras.models import Model
-from keras.optimizers import RMSprop
+from tensorflow.keras.layers import LSTM, Input, Dropout, Dense, Activation, Embedding, Concatenate, Reshape
+from tensorflow.keras.layers import Flatten, RepeatVector, Permute, TimeDistributed
+from tensorflow.keras.layers import Multiply, Lambda, Softmax
+import tensorflow.keras.backend as K 
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import RMSprop
 
-from keras.utils import np_utils
+from tensorflow.keras.utils import to_categorical
 
 def get_music_list(data_folder):
     
@@ -118,8 +118,8 @@ def prepare_sequences(notes, durations, lookups, distincts, seq_len =32):
     durations_network_input = np.reshape(durations_network_input, (n_patterns, seq_len))
     network_input = [notes_network_input, durations_network_input]
 
-    notes_network_output = np_utils.to_categorical(notes_network_output, num_classes=n_notes)
-    durations_network_output = np_utils.to_categorical(durations_network_output, num_classes=n_durations)
+    notes_network_output = to_categorical(notes_network_output, num_classes=n_notes)
+    durations_network_output = to_categorical(durations_network_output, num_classes=n_durations)
     network_output = [notes_network_output, durations_network_output]
 
     return (network_input, network_output)

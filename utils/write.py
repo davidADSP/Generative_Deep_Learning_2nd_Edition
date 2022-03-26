@@ -33,31 +33,34 @@ UNKNOWN_TOKEN = _add_word(UNKNOWN_WORD)
 START_TOKEN = _add_word(START_WORD)
 END_TOKEN = _add_word(END_WORD)
 
+def get_glove():
+    
+    embeddings_path = './data/glove/glove.6B.100d.trimmed.txt'
 
-embeddings_path = './data/glove/glove.6B.100d.trimmed.txt'
-
-with open(embeddings_path) as f:
-    line = f.readline()
-    chunks = line.split(" ")
-    dimensions = len(chunks) - 1
-    f.seek(0)
-
-    vocab_size = sum(1 for line in f)
-    vocab_size += 4 #3 
-    f.seek(0)
-
-    glove = np.ndarray((vocab_size, dimensions), dtype=np.float32)
-    glove[PADDING_TOKEN] = np.random.normal(0, 0.02, dimensions)
-    glove[UNKNOWN_TOKEN] = np.random.normal(0, 0.02, dimensions)
-    glove[START_TOKEN] = np.random.normal(0, 0.02, dimensions)
-    glove[END_TOKEN] = np.random.normal(0, 0.02, dimensions)
-
-    for line in f:
+    with open(embeddings_path) as f:
+        line = f.readline()
         chunks = line.split(" ")
-        idx = _add_word(chunks[0])
-        glove[idx] = [float(chunk) for chunk in chunks[1:]]
-        if len(_idx_to_word) >= vocab_size:
-            break
+        dimensions = len(chunks) - 1
+        f.seek(0)
+
+        vocab_size = sum(1 for line in f)
+        vocab_size += 4 #3 
+        f.seek(0)
+
+        glove = np.ndarray((vocab_size, dimensions), dtype=np.float32)
+        glove[PADDING_TOKEN] = np.random.normal(0, 0.02, dimensions)
+        glove[UNKNOWN_TOKEN] = np.random.normal(0, 0.02, dimensions)
+        glove[START_TOKEN] = np.random.normal(0, 0.02, dimensions)
+        glove[END_TOKEN] = np.random.normal(0, 0.02, dimensions)
+
+        for line in f:
+            chunks = line.split(" ")
+            idx = _add_word(chunks[0])
+            glove[idx] = [float(chunk) for chunk in chunks[1:]]
+            if len(_idx_to_word) >= vocab_size:
+                break
+
+    return glove
 
 
 
@@ -320,7 +323,7 @@ def trim_embeddings():
             break
         keep.add(word)
 
-    with open("./data/glove/glove.6B.100d.txt") as f:
+    with open("./data/glove/glove.6B.100d.txt", encoding="utf-8") as f:
         with open("./data/glove/glove.6B.100d.trimmed.txt", "w") as f2:
             for line in f:
                 if line.split(" ")[0] in keep:
