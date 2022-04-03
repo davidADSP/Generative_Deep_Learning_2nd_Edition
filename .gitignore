@@ -1,17 +1,5 @@
-Dockerfile
-
-run/gan/*
-run/compose/*
-run/paint/*
-run/write/*
-run/vae/*
-
-
-
-archive/*
-
-models/archive/*
-
+run/*
+data/*
 
 .DS_Store
 
