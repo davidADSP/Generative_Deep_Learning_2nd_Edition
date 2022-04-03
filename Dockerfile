@@ -1,5 +1,8 @@
 FROM python:3.9.0-slim
 
+RUN apt-get update
+RUN apt-get install -y unzip
+
 RUN pip install --upgrade pip
 
 RUN useradd -m gdl
@@ -22,4 +25,3 @@ COPY /scripts/. /app/scripts
 COPY /setup.cfg /app
 
 ENV PYTHONPATH="${PYTHONPATH}:/app"
-
