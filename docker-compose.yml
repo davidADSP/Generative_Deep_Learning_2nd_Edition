@@ -14,6 +14,6 @@ services:
       - ./run/:/app/run
       - ./scripts/:/app/scripts
     ports:
-        - "8888:8888"
-    entrypoint: jupyter lab --ip 0.0.0.0 --no-browser --allow-root
+        - "$JUPYTER_PORT:$JUPYTER_PORT"
+    entrypoint: jupyter lab --ip 0.0.0.0 --port=$JUPYTER_PORT --no-browser --allow-root
     
