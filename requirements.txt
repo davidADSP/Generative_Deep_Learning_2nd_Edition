@@ -7,5 +7,8 @@ scikit-image==0.19.2
 pandas==1.4.1
 music21==7.1.0
 black[jupyter]==22.1.0
+click==8.0.4
 flake8==4.0.1
 kaggle==1.5.12
+pydot==1.4.2
+tensorboard==2.8.0

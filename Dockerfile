@@ -1,7 +1,7 @@
 FROM python:3.9.0-slim
 
 RUN apt-get update
-RUN apt-get install -y unzip
+RUN apt-get install -y unzip graphviz
 
 RUN pip install --upgrade pip
 
