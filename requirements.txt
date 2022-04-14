@@ -12,3 +12,5 @@ flake8==4.0.1
 kaggle==1.5.12
 pydot==1.4.2
 tensorboard==2.8.0
+tensorflow-datasets==4.5.2
+ipywidgets==7.7.0

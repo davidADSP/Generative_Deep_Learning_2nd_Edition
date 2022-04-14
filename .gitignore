@@ -1,5 +1,6 @@
-notebooks/*/*/*/checkpoint/*
-notebooks/*/*/*/logs/*
+notebooks/*/*/*/checkpoint
+notebooks/*/*/*/logs
+notebooks/*/*/*/archive
 
 run/*
 data/*

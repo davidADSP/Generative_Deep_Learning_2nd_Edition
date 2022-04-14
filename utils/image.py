@@ -12,6 +12,8 @@ def preprocess(imgs):
     imgs = np.expand_dims(imgs, -1)
     return imgs
 
+
+
 def noise(imgs, noise_factor):
     """
     Adds random noise to each image in the supplied array.
