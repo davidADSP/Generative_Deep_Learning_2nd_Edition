@@ -1,4 +1,4 @@
-tensorflow==2.8.0
+# tensorflow==2.8.0
 tensorflow_addons==0.16.1
 matplotlib==3.5.1
 jupyterlab==3.3.2
@@ -11,6 +11,6 @@ click==8.0.4
 flake8==4.0.1
 kaggle==1.5.12
 pydot==1.4.2
-tensorboard==2.8.0
-tensorflow-datasets==4.5.2
+# tensorboard==2.8.0
+# tensorflow-datasets==4.5.2
 ipywidgets==7.7.0
