@@ -11,6 +11,7 @@ ENV PATH="/home/gdl/.local/bin:${PATH}"
 WORKDIR /app
 
 RUN chown -R gdl:gdl /app
+RUN usermod -u 1002 gdl
 
 USER gdl
 

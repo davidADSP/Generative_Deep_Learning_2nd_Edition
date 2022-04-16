@@ -26,7 +26,7 @@ def noise(imgs, noise_factor):
 
 
 
-def display(images, n = 10, size = (20,3), cmap = 'Greys', as_type = 'float32'):
+def display(images, n = 10, size = (20,3), cmap = 'Greys', as_type = 'float32', save_to = None):
     """
     Displays n random images from each one of the supplied arrays.
     """
@@ -35,4 +35,10 @@ def display(images, n = 10, size = (20,3), cmap = 'Greys', as_type = 'float32'):
         ax = plt.subplot(1, n, i + 1)
         plt.imshow(images[i].astype(as_type), cmap=cmap)
         plt.axis("off")
+    
+    if save_to:
+        out = plt.savefig(save_to)
+        print(f'\nSaved to {save_to}')
+
     plt.show()
+        
