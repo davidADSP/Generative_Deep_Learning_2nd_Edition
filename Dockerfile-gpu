@@ -25,5 +25,3 @@ COPY /scripts/. /app/scripts
 COPY /setup.cfg /app
 
 ENV PYTHONPATH="${PYTHONPATH}:/app"
-
-USER root
