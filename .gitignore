@@ -1,6 +1,8 @@
 notebooks/*/*/*/checkpoint
 notebooks/*/*/*/logs*
 notebooks/*/*/*/archive
+notebooks/*/*/*/output
+!notebooks/*/*/*/output/.gitignore
 
 run/*
 data/*
