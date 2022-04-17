@@ -26,7 +26,7 @@ def noise(imgs, noise_factor):
 
 
 
-def display(images, n = 10, size = (20,3), cmap = 'Greys', as_type = 'float32', save_to = None):
+def display(images, n = 10, size = (20,3), cmap = 'gray_r', as_type = 'float32', save_to = None):
     """
     Displays n random images from each one of the supplied arrays.
     """
