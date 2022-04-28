@@ -6,4 +6,7 @@ def sample_batches(dataset, batches):
 
 
 def sample_batch(dataset):
-    return dataset.take(1).get_single_element().numpy()
+    batch = dataset.take(1).get_single_element()
+    if len(batch) > 1:
+        batch = batch[0]
+    return batch.numpy()
