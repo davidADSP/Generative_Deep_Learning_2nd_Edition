@@ -18,5 +18,5 @@ services:
         - "$TENSORBOARD_PORT:$TENSORBOARD_PORT"
     env_file:
      - ./.env
-    entrypoint: jupyter lab --ip 0.0.0.0 --port=$JUPYTER_PORT --no-browser
+    entrypoint: jupyter lab --ip 0.0.0.0 --port=$JUPYTER_PORT --no-browser --allow-root
     

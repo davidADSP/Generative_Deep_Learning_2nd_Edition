@@ -5,17 +5,10 @@ RUN apt-get install -y unzip graphviz
 
 RUN pip install --upgrade pip
 
-RUN useradd -m gdl
-ENV PATH="/home/gdl/.local/bin:${PATH}"
-
 WORKDIR /app
 
-RUN chown -R gdl:gdl /app
-
-USER gdl
-
 COPY ./requirements.txt /app
-RUN pip install --user -r /app/requirements.txt
+RUN pip install -r /app/requirements.txt
 
 COPY /models/. /app/models
 COPY /utils/. /app/utils
