@@ -1,3 +1,5 @@
+notebooks/ebm/*
+
 notebooks/*/*/checkpoint
 notebooks/*/*/logs*
 notebooks/*/*/archive
