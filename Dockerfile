@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow
+FROM tensorflow/tensorflow:2.10.0
 
 RUN apt-get update
 RUN apt-get install -y unzip graphviz
