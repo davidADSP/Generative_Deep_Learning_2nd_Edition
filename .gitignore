@@ -3,6 +3,7 @@ notebooks/*/*/logs*
 notebooks/*/*/archive
 notebooks/*/*/output/*
 !notebooks/*/*/output/.gitignore
+notebooks/*/*/parsed_data/*
 
 run/*
 data/*
