@@ -1,9 +1,45 @@
 import os
 import pickle as pkl
-from music21 import note, chord
+import music21
+from fractions import Fraction
 
-# file_list = ["bwv" + str(x["bwv"]) for x in corpus.chorales.ChoraleList().byBWV.values()]
-# parser = corpus
+def get_midi_note(sample_note, sample_duration):
+    new_note = None
+    
+    if "TS" in sample_note:
+        new_note = music21.meter.TimeSignature(sample_note.split('TS')[0])
+        
+    elif "major" in sample_note or "minor" in sample_note:
+        tonic, mode = sample_note.split(':')
+        new_note = music21.key.Key(tonic, mode)
+    
+    elif sample_note == "rest":
+        new_note = music21.note.Rest()
+        new_note.duration = music21.duration.Duration(float(Fraction(sample_duration)))
+        new_note.storedInstrument = music21.instrument.Violoncello()
+
+    elif "." in sample_note:
+        notes_in_chord = sample_note.split(".")
+        chord_notes = []
+        for current_note in notes_in_chord:
+            n = music21.note.Note(current_note)
+            n.duration = music21.duration.Duration(float(Fraction(sample_duration)))
+            n.storedInstrument = music21.instrument.Violoncello()
+            chord_notes.append(n)
+        new_note = music21.chord.Chord(chord_notes)
+
+    elif sample_note == "rest":
+        new_note = music21.note.Rest()
+        new_note.duration = music21.duration.Duration(float(Fraction(sample_duration)))
+        new_note.storedInstrument = music21.instrument.Violoncello()
+
+
+    elif sample_note != "START":
+        new_note = music21.note.Note(sample_note)
+        new_note.duration = music21.duration.Duration(float(Fraction(sample_duration)))
+        new_note.storedInstrument = music21.instrument.Violoncello()
+        
+    return new_note
 
 def parse_midi_files(file_list, parser, max_len):
 
@@ -19,23 +55,30 @@ def parse_midi_files(file_list, parser, max_len):
         score = parser.parse(file).chordify()
     
         notes.append("START")
-        durations.append("0")
+        durations.append("0.0")
 
         for element in score.flat:
             note_name = None
             duration_name  = None
 
-            if isinstance(element, chord.Chord):
-                note_name = ".".join(n.nameWithOctave for n in element.pitches)
+            if isinstance(element, music21.key.Key):
+                note_name = str(element.tonic.name) + ':' + str(element.mode)
+                duration_name = "0.0"
+
+            elif isinstance(element, music21.meter.TimeSignature):
+                note_name = str(element.ratioString) + 'TS'
+                duration_name = "0.0"
+
+            elif isinstance(element, music21.chord.Chord):
+                note_name = element.pitches[-1].nameWithOctave
                 duration_name = str(element.duration.quarterLength)
                 
-
-            elif isinstance(element, note.Rest):
+            elif isinstance(element, music21.note.Rest):
                 note_name = str(element.name)
                 duration_name = str(element.duration.quarterLength)
               
         
-            elif isinstance(element, note.Note):
+            elif isinstance(element, music21.note.Note):
                 note_name = str(element.nameWithOctave)
                 duration_name = str(element.duration.quarterLength)
                
@@ -60,12 +103,20 @@ def parse_midi_files(file_list, parser, max_len):
     return notes_list, duration_list
 
 
+
+
+
+
+
+
+
 def load_parsed_files():
     with open(os.path.join('/app/notebooks/music/bach-cello/parsed_data/', "notes"), "rb") as f:
         notes = pkl.load(f)
     with open(os.path.join('/app/notebooks/music/bach-cello/parsed_data/', "durations"), "rb") as f:
         durations = pkl.load(f)
     return notes, durations
+
 
 
 def create_lookup_tables(elements):

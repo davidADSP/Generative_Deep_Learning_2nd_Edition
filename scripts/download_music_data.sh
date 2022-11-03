@@ -1,4 +1,5 @@
 docker-compose exec app bash -c "
+mkdir /app/data/bach-cello/
 cd /app/data/bach-cello/ && 
 echo 'Downloading...' && 
 curl -O http://www.jsbach.net/midi/cs1-1pre.mid -s &&

@@ -16,3 +16,4 @@ ipywidgets==7.7.0
 tensorflow_probability==0.16.0
 scikit-learn==1.1.1
 pygame==2.1.2
+keras-nlp==0.3.0
