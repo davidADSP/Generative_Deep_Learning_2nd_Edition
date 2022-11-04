@@ -41,7 +41,7 @@ def get_midi_note(sample_note, sample_duration):
         
     return new_note
 
-def parse_midi_files(file_list, parser, max_len):
+def parse_midi_files(file_list, parser, seq_len):
 
     notes_list = []
     duration_list = []
@@ -90,10 +90,10 @@ def parse_midi_files(file_list, parser, max_len):
     notes_list = []
     duration_list = []
     print(f"{len(notes)} notes parsed")
-    print(f"Building sequences of length {max_len}")
-    for i in range(len(notes)-max_len):
-        notes_list.append(' '.join(notes[i:(i+max_len)]))
-        duration_list.append(' '.join(durations[i:(i+max_len)]))
+    print(f"Building sequences of length {seq_len}")
+    for i in range(len(notes)-seq_len):
+        notes_list.append(' '.join(notes[i:(i+seq_len)]))
+        duration_list.append(' '.join(durations[i:(i+seq_len)]))
 
     with open(os.path.join('/app/notebooks/music/bach-cello/parsed_data/', "notes"), "wb") as f:
         pkl.dump(notes_list, f)
