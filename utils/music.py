@@ -1,6 +1,8 @@
 import os
 import pickle as pkl
 import music21
+import numpy as np
+
 from fractions import Fraction
 
 def get_midi_note(sample_note, sample_duration):
@@ -103,13 +105,6 @@ def parse_midi_files(file_list, parser, seq_len):
     return notes_list, duration_list
 
 
-
-
-
-
-
-
-
 def load_parsed_files():
     with open(os.path.join('/app/notebooks/music/bach-cello/parsed_data/', "notes"), "rb") as f:
         notes = pkl.load(f)
@@ -118,64 +113,36 @@ def load_parsed_files():
     return notes, durations
 
 
-
-def create_lookup_tables(elements):
-    # get the distinct sets of notes and durations
-    distinct_list = sorted(list(set(elements)))
-
-    element_to_int = {element: number for number, element in enumerate(distinct_list)}
-    int_to_element = {number: element for number, element in enumerate(distinct_list)}
-
-    return element_to_int, int_to_element
+### CHORALES
 
 
+def binarise_output(output):
+    # output is a set of scores: [batch size , steps , pitches , tracks]
+    max_pitches = np.argmax(output, axis = 3)
+    return max_pitches
 
 
-
-
-def prepare_sequences(notes, durations, lookups, distincts, seq_len=32):
-    """Prepare the sequences used to train the Neural Network"""
-
-    note_to_int, int_to_note, duration_to_int, int_to_duration = lookups
-    note_names, n_notes, duration_names, n_durations = distincts
-
-    notes_network_input = []
-    notes_network_output = []
-    durations_network_input = []
-    durations_network_output = []
-
-    # create input sequences and the corresponding outputs
-    for i in range(len(notes) - seq_len):
-        notes_sequence_in = notes[i : i + seq_len]
-        notes_sequence_out = notes[i + seq_len]
-        notes_network_input.append([note_to_int[char] for char in notes_sequence_in])
-        notes_network_output.append(note_to_int[notes_sequence_out])
-
-        durations_sequence_in = durations[i : i + seq_len]
-        durations_sequence_out = durations[i + seq_len]
-        durations_network_input.append([duration_to_int[char] for char in durations_sequence_in])
-        durations_network_output.append(duration_to_int[durations_sequence_out])
-
-    n_patterns = len(notes_network_input)
-
-    # reshape the input into a format compatible with LSTM layers
-    notes_network_input = np.reshape(notes_network_input, (n_patterns, seq_len))
-    durations_network_input = np.reshape(durations_network_input, (n_patterns, seq_len))
-    network_input = [notes_network_input, durations_network_input]
-
-    notes_network_output = to_categorical(notes_network_output, num_classes=n_notes)
-    durations_network_output = to_categorical(durations_network_output, num_classes=n_durations)
-    network_output = [notes_network_output, durations_network_output]
-
-    return (network_input, network_output)
-
-
-def sample_with_temp(preds, temperature):
-
-    if temperature == 0:
-        return np.argmax(preds)
-    else:
-        preds = np.log(preds) / temperature
-        exp_preds = np.exp(preds)
-        preds = exp_preds / np.sum(exp_preds)
-        return np.random.choice(len(preds), p=preds)
+def notes_to_midi(output, filename, n_bars, n_tracks, n_steps_per_bar):
+    for score_num in range(len(output)):
+        max_pitches = binarise_output(output)
+        midi_note_score = max_pitches[score_num].reshape([n_bars * n_steps_per_bar, n_tracks])
+        parts = music21.stream.Score()
+        parts.append(music21.tempo.MetronomeMark(number= 66))
+        for i in range(n_tracks):
+            last_x = int(midi_note_score[:,i][0])
+            s= music21.stream.Part()
+            dur = 0
+            for idx, x in enumerate(midi_note_score[:, i]):
+                x = int(x)
+                if (x != last_x or idx % 4 == 0) and idx > 0:
+                    n = music21.note.Note(last_x)
+                    n.duration = music21.duration.Duration(dur)
+                    s.append(n)
+                    dur = 0
+                last_x = x
+                dur = dur + 0.25
+            n = music21.note.Note(last_x)
+            n.duration = music21.duration.Duration(dur)
+            s.append(n)
+            parts.append(s)
+            parts.write('midi', fp="./output/{}.midi".format(filename))
