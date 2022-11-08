@@ -2,6 +2,7 @@ import os
 import pickle as pkl
 import music21
 import numpy as np
+from matplotlib import pyplot as plt
 
 from fractions import Fraction
 
@@ -122,7 +123,7 @@ def binarise_output(output):
     return max_pitches
 
 
-def notes_to_midi(output, filename, n_bars, n_tracks, n_steps_per_bar):
+def notes_to_midi(output, n_bars, n_tracks, n_steps_per_bar, filename):
     for score_num in range(len(output)):
         max_pitches = binarise_output(output)
         midi_note_score = max_pitches[score_num].reshape([n_bars * n_steps_per_bar, n_tracks])
@@ -145,4 +146,24 @@ def notes_to_midi(output, filename, n_bars, n_tracks, n_steps_per_bar):
             n.duration = music21.duration.Duration(dur)
             s.append(n)
             parts.append(s)
-            parts.write('midi', fp="./output/{}.midi".format(filename))
+        parts.write('midi', fp="./output/{}_{}.midi".format(filename, score_num))
+
+
+def draw_bar(data, score_num, bar, part):
+    plt.imshow(data[score_num,bar,:,:,part].transpose([1,0]), origin='lower', cmap = 'Greys', vmin=-1, vmax=1)
+
+def draw_score(data, score_num):
+
+    n_bars = data.shape[1]
+    n_tracks = data.shape[-1]
+    
+    fig, axes = plt.subplots(ncols=n_bars, nrows=n_tracks,figsize=(12,8), sharey = True, sharex = True)
+    fig.subplots_adjust(0,0,0.2,1.5,0,0)
+
+    for bar in range(n_bars):
+        for track in range(n_tracks):
+
+            if n_bars > 1:
+                axes[track, bar].imshow(data[score_num,bar,:,:,track].transpose([1,0]), origin='lower', cmap = 'Greys')
+            else:
+                axes[track].imshow(data[score_num,bar,:,:,track].transpose([1,0]), origin='lower', cmap = 'Greys')
