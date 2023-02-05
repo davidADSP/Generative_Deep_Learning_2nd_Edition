@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu
+    tty: true
+    volumes:
+      - ./data/:/app/data
+      - ./utils/:/app/utils
+      - ./notebooks/:/app/notebooks
+      - ./scripts/:/app/scripts
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    ports:
+        - "$JUPYTER_PORT:$JUPYTER_PORT"
+        - "$TENSORBOARD_PORT:$TENSORBOARD_PORT"
+    env_file:
+     - ./.env
+    entrypoint: jupyter lab --ip 0.0.0.0 --port=$JUPYTER_PORT --no-browser --allow-root
+    
