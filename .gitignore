@@ -7,6 +7,8 @@ notebooks/*/*/train
 notebooks/*/*/output/*
 notebooks/*/*/parsed_data/*
 
+data
+
 .DS_Store
 
 # Byte-compiled / optimized / DLL files
