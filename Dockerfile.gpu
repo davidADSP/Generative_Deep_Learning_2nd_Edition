@@ -1,11 +1,9 @@
-FROM tensorflow/tensorflow:2.10.0-gpu
+FROM tensorflow/tensorflow:2.10.1-gpu
 
 RUN rm /etc/apt/sources.list.d/cuda.list
 
 RUN apt-get update
-RUN apt-get install -y unzip graphviz
-RUN apt-get update
-RUN apt-get install -y musescore3
+RUN apt-get install -y unzip graphviz musescore3
 
 RUN pip install --upgrade pip
 

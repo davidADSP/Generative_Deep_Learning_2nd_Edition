@@ -1,12 +1,3 @@
-notebooks/*/*/checkpoint
-notebooks/*/*/logs*
-notebooks/*/*/archive
-notebooks/*/*/models
-notebooks/*/*/model
-notebooks/*/*/train
-notebooks/*/*/output/*
-notebooks/*/*/parsed_data/*
-
 .DS_Store
 
 # Byte-compiled / optimized / DLL files

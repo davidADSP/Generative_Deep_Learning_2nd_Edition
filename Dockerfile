@@ -1,9 +1,12 @@
-FROM tensorflow/tensorflow:2.10.0
+FROM ubuntu:20.04
 
 RUN apt-get update
+RUN apt-get -y upgrade
 RUN apt-get install -y unzip graphviz
 RUN apt-get update
 RUN apt-get install -y musescore3
+RUN apt-get update
+RUN apt-get install -y python3-pip
 
 RUN pip install --upgrade pip
 
