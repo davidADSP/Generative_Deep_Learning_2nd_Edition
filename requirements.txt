@@ -12,4 +12,4 @@ ipywidgets==8.0.4
 tensorflow==2.10.1
 tensorboard==2.10.1
 tensorflow-io==0.30.0
-tensorflow_probability==0.19.0
+tensorflow_probability==0.18.0
