@@ -1,6 +1,7 @@
 matplotlib==3.6.3
 jupyterlab==3.5.3
 scipy==1.10.0
+scikit-learn==1.2.1
 pandas==1.5.3
 music21==8.1.0
 black[jupyter]==23.1.0
