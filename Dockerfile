@@ -1,12 +1,10 @@
 FROM ubuntu:20.04
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get install -y unzip graphviz
-RUN apt-get update
-RUN apt-get install -y musescore3
-RUN apt-get update
-RUN apt-get install -y python3-pip
+RUN apt-get install -y unzip graphviz curl musescore3 python3-pip
 
 RUN pip install --upgrade pip
 
