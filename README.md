@@ -1,4 +1,4 @@
-# 🦜 Generative Deep Learning: 2nd Edition Official Codebase
+# 🦜 Generative Deep Learning - 2nd Edition Codebase
 
 The official code repository for the second edition of the O'Reilly book 'Generative Deep Learning: Teaching Machines to Paint, Write, Compose and Play'
 
