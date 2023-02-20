@@ -1,4 +1,4 @@
-# Generative Deep Learning: Teaching Machines to Paint, Write, Compose and Play
+# Generative Deep Learning: Official Codebase
 
 The official code repository for the second edition of the O'Reilly book 'Generative Deep Learning: Teaching Machines to Paint, Write, Compose and Play'
 
@@ -9,25 +9,27 @@ https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1492041947/
 
 ## Book Chapters
 
+Below is a outline of the book chapters, with links to relevant notebook folders in the codebase.
+
 Part I: Introduction to Generative Deep Learning
 
-1. Generative Modeling
-2. Deep Learning
+1. [Generative Modeling]
+2. [Deep Learning](./notebooks/02_deeplearning/)
 
 Part II: Methods
 
-3. Variational Autoencoders
-4. Generative Adversarial Networks
-5. Autoregressive Models
-6. Normalizing Flows
-7. Energy-Based Models
-8. Diffusion Models
+3. [Variational Autoencoders](./notebooks/03_vae/)
+4. [Generative Adversarial Networks](./notebooks/04_gan/)
+5. [Autoregressive Models](./notebooks/05_autoregressive/)
+6. [Normalizing Flows](./notebooks/06_normflow/)
+7. [Energy-Based Models](./notebooks/07_ebm/)
+8. [Diffusion Models](./notebooks/08_diffusion/)
 
 Part III: Applications
 
-9. Transformers
+9. [Transformers](./notebooks/09_transformer/)
 10. Advanced GANs
-11. Music Generation
+11. [Music Generation](./notebooks/11_music/)
 12. World Models
 13. Multimodal Models
 14. Conclusion
@@ -63,7 +65,7 @@ KAGGLE_KEY=<your_kaggle_key>
 
 ### Get set up with Docker
 
-To get set up with Docker, follow the instructions in the `docker.md` file in this repository.
+To get set up with Docker, follow the instructions in the [docker.md] file in this repository.
 
 ### Building the Docker image
 
@@ -119,5 +121,10 @@ Tensorboard will be available in your local browser on the port specified in you
 ```
 http://localhost:6006
 ```
+
+### Using a cloud virtual machine
+
+To get set up with Google Cloud Platform, follow the instructions in the [googlecloud.md] file in this repository.
+
 
 
