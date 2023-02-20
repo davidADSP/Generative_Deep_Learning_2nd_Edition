@@ -1,6 +1,6 @@
-# Setting up a VM with GPU in Google Cloud Platform
+# ⚡️ Setting up a VM with GPU in Google Cloud Platform
 
-## Google Cloud Platform
+## ☁️ Google Cloud Platform
 
 Google Cloud Platform is a public cloud vendor that offers a wide variety of computing services, running on Google infrastructure. It is extremely useful for spinning up resources on demand, that otherwise would require a large upfront investment in hardware and set up time.
 
@@ -8,7 +8,7 @@ There are many cloud vendors - the largest being Amazon Web Services (AWS), Micr
 
 In this book, we will demonstrate how to set up a virtual server with a GPU on Google Cloud Platform. You can use this environment to run the codebase that accompanies this book on accelerated GPU hardware, for faster training.
 
-## Getting started
+## 🚀 Getting started
 
 ### Get a Google Cloud Platform Account
 
@@ -92,7 +92,7 @@ Congratulations - you're now running the Generative Deep Learning codebase on a 
 
 If you navigate to `http://127.0.0.1:8888/` in your browser, you should see Jupyter Lab, as VS Code automatically forwards the Jupyter Lab port in the container to the same port on your machine. If not, check that the ports are mapped under the 'Ports' tab in VSCode.
 
-## Starting and stopping the virtual machine
+## 🚦 Starting and stopping the virtual machine
 
 When you are not using the virtual machine, it's important to turn it off so that you don't incur unnecessary charges.
 
