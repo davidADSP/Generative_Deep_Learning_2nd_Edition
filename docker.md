@@ -6,7 +6,7 @@ In this section, we will explain the reason for using Docker and how to get star
 
 The overall structure of the codebase and how Docker can be used to interact with it is shown below.
 
-![A diagram of how Docker is used to run this codebase](structure.png "A diagram of how Docker is used to run this codebase")
+![A diagram of how Docker is used to run this codebase](assets/structure.png "A diagram of how Docker is used to run this codebase")
 
 We will run through everything in the diagram in this `README`.
 
