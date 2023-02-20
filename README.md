@@ -1,6 +1,6 @@
 # 🦜 Generative Deep Learning - 2nd Edition Codebase
 
-The official code repository for the second edition of the O'Reilly book 'Generative Deep Learning: Teaching Machines to Paint, Write, Compose and Play'
+The official code repository for the second edition of the O'Reilly book *Generative Deep Learning: Teaching Machines to Paint, Write, Compose and Play*.
 
 https://learning.oreilly.com/library/view/generative-deep-learning/9781492041931/
 https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1492041947/ref=sr_1_1
@@ -34,9 +34,6 @@ Part III: Applications
 13. Multimodal Models
 14. Conclusion
 
-The subfolders in the `notebooks` folder correspond to the chapters from the book.
-Within each chapter, there are several examples of models that are again separated into different folders
-
 ## 🚀 Getting Started
 
 ### Kaggle API
@@ -61,11 +58,11 @@ KAGGLE_USERNAME=<your_kaggle_username>
 KAGGLE_KEY=<your_kaggle_key>
 ```
 
-## 🏃‍♀️ Running the Examples
-
 ### Get set up with Docker
 
-To get set up with Docker, follow the instructions in the [docker.md] file in this repository.
+This codebase is designed to be run with Docker.
+
+Don't worry if you've never used Docker before! To get set up, follow the instructions in the [./docker.md] file in this repository. This includes a full run through of why Docker is awesome and a description of how interact with the codebase using Docker.
 
 ### Building the Docker image
 
@@ -80,6 +77,8 @@ If you do have a GPU that you wish to use, run the following command:
 ```
 docker-compose -f docker-compose-gpu.yml build
 ```
+
+## 🏃‍♀️ Running the Examples
 
 ### Running the container
 
@@ -103,7 +102,8 @@ http://localhost:8888
 
 ### Downloading data
 
-The codebase comes with an in-built data downloader helper script. Use the script as follows:
+The codebase comes with an in-built data downloader helper script.
+Use the helper script as follows (from outside the container):
 
 ```
 bash scripts/download.sh [faces, bricks, recipes, flowers, wines, cellosuites, chorales]
@@ -111,7 +111,9 @@ bash scripts/download.sh [faces, bricks, recipes, flowers, wines, cellosuites, c
 
 ### Tensorboard
 
-To launch Tensorboard, run the following script, replacing `<CHAPTER>` with the required chapter (e.g. `03_vae`) and `<EXAMPLE>` with the required example (e.g. `02_vae_fashion`).
+Tensorboard is really useful for monitoring experiments and seeing how your generative deep learning model training is progressing.
+
+To launch Tensorboard, run the following script (from outside the container), replacing `<CHAPTER>` with the required chapter (e.g. `03_vae`) and `<EXAMPLE>` with the required example (e.g. `02_vae_fashion`).
 
 ```
 bash scripts/tensorboard.sh <CHAPTER> <EXAMPLE>
@@ -124,7 +126,7 @@ http://localhost:6006
 
 ### Using a cloud virtual machine
 
-To get set up with Google Cloud Platform, follow the instructions in the [googlecloud.md] file in this repository.
+To set up a virtual machine with GPU in Google Cloud Platform, follow the instructions in the [./googlecloud.md] file in this repository.
 
 
 
