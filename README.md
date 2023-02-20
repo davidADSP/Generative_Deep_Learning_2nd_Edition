@@ -10,35 +10,24 @@ https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1492041947/
 Part I: Introduction to Generative Deep Learning
 
 1. Generative Modeling
-
 2. Deep Learning
 
 Part II: Methods
 
 3. Variational Autoencoders
-
 4. Generative Adversarial Networks
-
 5. Autoregressive Models
-
 6. Normalizing Flows
-
 7. Energy-Based Models
-
 8. Diffusion Models
 
 Part III: Applications
 
 9. Transformers
-
 10. Advanced GANs
-
 11. Music Generation
-
 12. World Models
-
 13. Multimodal Models
-
 14. Conclusion
 
 The subfolders in the `notebooks` folder correspond to the chapters from the book.
