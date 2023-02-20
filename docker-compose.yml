@@ -4,11 +4,10 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./docker/Dockerfile
     tty: true
     volumes:
       - ./data/:/app/data
-      - ./utils/:/app/utils
       - ./notebooks/:/app/notebooks
       - ./scripts/:/app/scripts
     ports:

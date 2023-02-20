@@ -8,8 +8,8 @@ from fractions import Fraction
 
 ### TRANSFORMER
 
-def parse_midi_files(file_list, parser, seq_len, parsed_data_path = None):
 
+def parse_midi_files(file_list, parser, seq_len, parsed_data_path=None):
     notes_list = []
     duration_list = []
     notes = []
@@ -50,10 +50,10 @@ def parse_midi_files(file_list, parser, seq_len, parsed_data_path = None):
                 notes.append(note_name)
                 durations.append(duration_name)
         print(f"{len(notes)} notes parsed")
-    
+
     notes_list = []
     duration_list = []
-    
+
     print(f"Building sequences of length {seq_len}")
     for i in range(len(notes) - seq_len):
         notes_list.append(" ".join(notes[i : (i + seq_len)]))
@@ -74,6 +74,7 @@ def load_parsed_files(parsed_data_path):
     with open(os.path.join(parsed_data_path, "durations"), "rb") as f:
         durations = pkl.load(f)
     return notes, durations
+
 
 def get_midi_note(sample_note, sample_duration):
     new_note = None
@@ -111,7 +112,6 @@ def get_midi_note(sample_note, sample_duration):
         new_note.storedInstrument = music21.instrument.Violoncello()
 
     return new_note
-
 
 
 class SinePositionEncoding(keras.layers.Layer):
@@ -163,17 +163,14 @@ class SinePositionEncoding(keras.layers.Layer):
         min_freq = tf.cast(1 / self.max_wavelength, dtype=self.compute_dtype)
         timescales = tf.pow(
             min_freq,
-            tf.cast(2 * (tf.range(hidden_size) // 2), self.compute_dtype)
-            / tf.cast(hidden_size, self.compute_dtype),
+            tf.cast(2 * (tf.range(hidden_size) // 2), self.compute_dtype) / tf.cast(hidden_size, self.compute_dtype),
         )
         angles = tf.expand_dims(position, 1) * tf.expand_dims(timescales, 0)
         # even indices are sine, odd are cosine
         cos_mask = tf.cast(tf.range(hidden_size) % 2, self.compute_dtype)
         sin_mask = 1 - cos_mask
         # embedding shape is [seq_length, hidden_size]
-        positional_encodings = (
-            tf.sin(angles) * sin_mask + tf.cos(angles) * cos_mask
-        )
+        positional_encodings = tf.sin(angles) * sin_mask + tf.cos(angles) * cos_mask
 
         return tf.broadcast_to(positional_encodings, input_shape)
 

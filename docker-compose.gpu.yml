@@ -4,11 +4,10 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile.gpu
+      dockerfile: ./docker/Dockerfile.gpu
     tty: true
     volumes:
       - ./data/:/app/data
-      - ./utils/:/app/utils
       - ./notebooks/:/app/notebooks
       - ./scripts/:/app/scripts
     deploy:

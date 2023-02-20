@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def get_vector_from_label(data, vae, embedding_dim, label):
 
+def get_vector_from_label(data, vae, embedding_dim, label):
     origin = np.zeros(shape=embedding_dim, dtype="float32")
     current_sum_POS = np.zeros(shape=embedding_dim, dtype="float32")
     current_n_POS = 0
@@ -18,7 +18,6 @@ def get_vector_from_label(data, vae, embedding_dim, label):
     print("label: " + label)
     print("images : POS move : NEG move :distance : 𝛥 distance")
     while current_n_POS < 10000:
-
         batch = list(data.take(1).get_single_element())
         im = batch[0]
         attribute = batch[1]
@@ -69,7 +68,6 @@ def get_vector_from_label(data, vae, embedding_dim, label):
 
 
 def add_vector_to_images(data, vae, feature_vec):
-
     n_to_show = 5
     factors = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 
@@ -84,7 +82,6 @@ def add_vector_to_images(data, vae, feature_vec):
     counter = 1
 
     for i in range(n_to_show):
-
         img = example_images[i]
         sub = fig.add_subplot(n_to_show, len(factors) + 1, counter)
         sub.axis("off")
@@ -93,7 +90,6 @@ def add_vector_to_images(data, vae, feature_vec):
         counter += 1
 
         for factor in factors:
-
             changed_z_point = z_points[i] + feature_vec * factor
             changed_image = vae.decoder.predict(np.array([changed_z_point]), verbose=0)[0]
 
@@ -106,9 +102,7 @@ def add_vector_to_images(data, vae, feature_vec):
     plt.show()
 
 
-
 def morph_faces(data, vae):
-
     factors = np.arange(0, 1, 0.1)
 
     example_batch = list(data.take(1).get_single_element())[:2]
@@ -127,7 +121,6 @@ def morph_faces(data, vae):
     counter += 1
 
     for factor in factors:
-
         changed_z_point = z_points[0] * (1 - factor) + z_points[1] * factor
         changed_image = vae.decoder.predict(np.array([changed_z_point]), verbose=0)[0]
         sub = fig.add_subplot(1, len(factors) + 2, counter)

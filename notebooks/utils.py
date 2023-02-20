@@ -1,5 +1,11 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
+def sample_batch(dataset):
+    batch = dataset.take(1).get_single_element()
+    if isinstance(batch, tuple):
+        batch = batch[0]
+    return batch.numpy()
 
 def display(images, n=10, size=(20, 3), cmap="gray_r", as_type="float32", save_to=None):
     """

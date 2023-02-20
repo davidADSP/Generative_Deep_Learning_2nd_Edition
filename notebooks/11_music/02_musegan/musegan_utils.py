@@ -2,10 +2,12 @@ import music21
 import numpy as np
 from matplotlib import pyplot as plt
 
+
 def binarise_output(output):
     # output is a set of scores: [batch size , steps , pitches , tracks]
     max_pitches = np.argmax(output, axis=3)
     return max_pitches
+
 
 def notes_to_midi(output, n_bars, n_tracks, n_steps_per_bar, filename):
     for score_num in range(len(output)):
@@ -38,7 +40,6 @@ def draw_bar(data, score_num, bar, part):
 
 
 def draw_score(data, score_num):
-
     n_bars = data.shape[1]
     n_tracks = data.shape[-1]
 
@@ -47,7 +48,6 @@ def draw_score(data, score_num):
 
     for bar in range(n_bars):
         for track in range(n_tracks):
-
             if n_bars > 1:
                 axes[track, bar].imshow(
                     data[score_num, bar, :, :, track].transpose([1, 0]), origin="lower", cmap="Greys"
