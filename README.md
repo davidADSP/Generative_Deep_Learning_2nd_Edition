@@ -1,4 +1,4 @@
-# Generative Deep Learning: Official Codebase
+# 🦜 Generative Deep Learning: Official Codebase
 
 The official code repository for the second edition of the O'Reilly book 'Generative Deep Learning: Teaching Machines to Paint, Write, Compose and Play'
 
@@ -7,13 +7,13 @@ https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1492041947/
 
 <img src="assets/book_cover.png" width="300px">
 
-## Book Chapters
+## 📖 Book Chapters
 
 Below is a outline of the book chapters, with links to relevant notebook folders in the codebase.
 
 Part I: Introduction to Generative Deep Learning
 
-1. [Generative Modeling]
+1. Generative Modeling
 2. [Deep Learning](./notebooks/02_deeplearning/)
 
 Part II: Methods
@@ -37,7 +37,7 @@ Part III: Applications
 The subfolders in the `notebooks` folder correspond to the chapters from the book.
 Within each chapter, there are several examples of models that are again separated into different folders
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Kaggle API
 
@@ -50,7 +50,7 @@ https://github.com/Kaggle/kaggle-api
 
 Download the JSON file that stores your username and API key.
 
-### The `.env` file
+### The .env file
 
 Create a file called `.env` in the root directory, containing the following values (replacing the Kaggle username and API key with the values from the JSON):
 
@@ -61,7 +61,7 @@ KAGGLE_USERNAME=<your_kaggle_username>
 KAGGLE_KEY=<your_kaggle_key>
 ```
 
-## Running the Examples
+## 🏃‍♀️ Running the Examples
 
 ### Get set up with Docker
 
