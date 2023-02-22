@@ -40,11 +40,11 @@ Many of the examples in this book are adapted from the excellent open source imp
 
 ### Kaggle API
 
-To download some of the datasets for the book, you will need a Kaggle account and an API token
+To download some of the datasets for the book, you will need a Kaggle account and an API token. To use the Kaggle API:
 
-Follow the instructions on the [Kaggle Github](https://github.com/Kaggle/kaggle-api) to get started.
-
-Download the JSON file that stores your username and API key.
+1. Sign up for a Kaggle account at https://www.kaggle.com.
+2. Go to the 'Account' tab of your user profile (https://www.kaggle.com/<username>/account)
+3. Select 'Create API Token'. This will trigger the download of `kaggle.json`, a file containing your API credentials.
 
 ### The .env file
 
