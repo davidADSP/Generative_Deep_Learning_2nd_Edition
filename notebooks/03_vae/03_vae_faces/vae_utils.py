@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 
 
 def get_vector_from_label(data, vae, embedding_dim, label):
-    origin = np.zeros(shape=embedding_dim, dtype="float32")
     current_sum_POS = np.zeros(shape=embedding_dim, dtype="float32")
     current_n_POS = 0
     current_mean_POS = np.zeros(shape=embedding_dim, dtype="float32")
@@ -73,7 +72,6 @@ def add_vector_to_images(data, vae, feature_vec):
 
     example_batch = list(data.take(1).get_single_element())
     example_images = example_batch[0]
-    example_labels = example_batch[1]
 
     _, _, z_points = vae.encoder.predict(example_images, verbose=0)
 

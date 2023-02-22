@@ -6,8 +6,6 @@ import tensorflow as tf
 
 from fractions import Fraction
 
-### TRANSFORMER
-
 
 def parse_midi_files(file_list, parser, seq_len, parsed_data_path=None):
     notes_list = []
