@@ -19,6 +19,4 @@ RUN pip uninstall -y tensorflow-io
 COPY /notebooks/. /app/notebooks
 COPY /scripts/. /app/scripts
 
-COPY /setup.cfg /app
-
 ENV PYTHONPATH="${PYTHONPATH}:/app"

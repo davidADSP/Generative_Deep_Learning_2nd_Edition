@@ -34,6 +34,8 @@ Part III: Applications
 13. Multimodal Models
 14. Conclusion
 
+Many of the examples in this book are adapted from the excellent open source implementations that are available through the Keras website (https://keras.io/examples/generative/). I highly recommend you check out this resource as new models and examples are constantly being added.
+
 ## 🚀 Getting Started
 
 ### Kaggle API
@@ -62,7 +64,7 @@ KAGGLE_KEY=<your_kaggle_key>
 
 This codebase is designed to be run with Docker.
 
-Don't worry if you've never used Docker before! To get set up, follow the instructions in the [Docker README](./docker.md) file in this repository. This includes a full run through of why Docker is awesome and a description of how interact with the codebase using Docker.
+Don't worry if you've never used Docker before! To get set up, follow the instructions in the [Docker README](./docs/docker.md) file in this repository. This includes a full run through of why Docker is awesome and a description of how interact with the codebase using Docker.
 
 ### Building the Docker image
 
@@ -126,7 +128,7 @@ http://localhost:6006
 
 ### Using a cloud virtual machine
 
-To set up a virtual machine with GPU in Google Cloud Platform, follow the instructions in the [Google Cloud README](./googlecloud.md) file in this repository.
+To set up a virtual machine with GPU in Google Cloud Platform, follow the instructions in the [Google Cloud README](./docs/googlecloud.md) file in this repository.
 
 
 
