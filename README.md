@@ -42,10 +42,7 @@ Many of the examples in this book are adapted from the excellent open source imp
 
 To download some of the datasets for the book, you will need a Kaggle account and an API token
 
-Follow the instructions here:
-```
-https://github.com/Kaggle/kaggle-api
-```
+Follow the instructions on the [Kaggle Github](https://github.com/Kaggle/kaggle-api) to get started.
 
 Download the JSON file that stores your username and API key.
 
