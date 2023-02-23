@@ -34,8 +34,6 @@ Part III: Applications
 13. Multimodal Models
 14. Conclusion
 
-Many of the examples in this book are adapted from the excellent open source implementations that are available through the Keras website (https://keras.io/examples/generative/). I highly recommend you check out this resource as new models and examples are constantly being added.
-
 ## 🚀 Getting Started
 
 ### Kaggle API
@@ -131,5 +129,8 @@ http://localhost:6006
 
 To set up a virtual machine with GPU in Google Cloud Platform, follow the instructions in the [Google Cloud README](./docs/googlecloud.md) file in this repository.
 
+### Other resources
+
+Some of the examples in this book are adapted from the excellent open source implementations that are available through the Keras website (https://keras.io/examples/generative/). I highly recommend you check out this resource as new models and examples are constantly being added.
 
 
