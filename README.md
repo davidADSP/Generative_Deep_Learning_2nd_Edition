@@ -11,12 +11,12 @@ https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1098134184/
 
 Below is a outline of the book chapters:
 
-Part I: Introduction to Generative Deep Learning
+*Part I: Introduction to Generative Deep Learning*
 
 1. Generative Modeling
 2. Deep Learning
 
-Part II: Methods
+*Part II: Methods*
 
 3. Variational Autoencoders
 4. Generative Adversarial Networks
@@ -25,7 +25,7 @@ Part II: Methods
 7. Energy-Based Models
 8. Diffusion Models
 
-Part III: Applications
+*Part III: Applications*
 
 9. Transformers
 10. Advanced GANs
