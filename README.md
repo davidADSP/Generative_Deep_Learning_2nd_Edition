@@ -14,22 +14,22 @@ Below is a outline of the book chapters, with links to relevant notebook folders
 Part I: Introduction to Generative Deep Learning
 
 1. Generative Modeling
-2. [Deep Learning](./notebooks/02_deeplearning/)
+2. Deep Learning
 
 Part II: Methods
 
-3. [Variational Autoencoders](./notebooks/03_vae/)
-4. [Generative Adversarial Networks](./notebooks/04_gan/)
-5. [Autoregressive Models](./notebooks/05_autoregressive/)
-6. [Normalizing Flows](./notebooks/06_normflow/)
-7. [Energy-Based Models](./notebooks/07_ebm/)
-8. [Diffusion Models](./notebooks/08_diffusion/)
+3. Variational Autoencoders
+4. Generative Adversarial Networks
+5. Autoregressive Models
+6. Normalizing Flows
+7. Energy-Based Models
+8. Diffusion Models
 
 Part III: Applications
 
-9. [Transformers](./notebooks/09_transformer/)
+9. Transformers
 10. Advanced GANs
-11. [Music Generation](./notebooks/11_music/)
+11. Music Generation
 12. World Models
 13. Multimodal Models
 14. Conclusion
@@ -93,11 +93,13 @@ If you do have a GPU that you wish to use, run the following command:
 docker-compose -f docker-compose-gpu.yml up
 ```
 
-The running notebooks will be available in your local browser, on the port specified in your env file - for example
+Jupyter will be available in your local browser, on the port specified in your env file - for example
 
 ```
 http://localhost:8888
 ```
+
+The notebooks that accompany the book are available in the `/notebooks` folder, organized by chapter and example.
 
 ### Downloading data
 
