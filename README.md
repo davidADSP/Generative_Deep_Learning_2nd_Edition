@@ -61,7 +61,7 @@ KAGGLE_KEY=<your_kaggle_key>
 
 This codebase is designed to be run with Docker.
 
-Don't worry if you've never used Docker before! To get set up, follow the instructions in the [Docker README](./docs/docker.md) file in this repository. This includes a full run through of why Docker is awesome and a description of how interact with the codebase using Docker.
+If you've never used Docker before, don't worry! I have included a guide to Docker in the [Docker README](./docs/docker.md) file in this repository. This includes a full run through of why Docker is awesome and a brief guide to the `Dockerfile` and `docker-compose.yml` for this project.
 
 ### Building the Docker image
 
@@ -102,7 +102,7 @@ http://localhost:8888
 ### Downloading data
 
 The codebase comes with an in-built data downloader helper script.
-Use the helper script as follows (from outside the container):
+Use the helper script as follows, choosing one of the named datasets below (from outside the container):
 
 ```
 bash scripts/download.sh [faces, bricks, recipes, flowers, wines, cellosuites, chorales]
@@ -110,9 +110,11 @@ bash scripts/download.sh [faces, bricks, recipes, flowers, wines, cellosuites, c
 
 ### Tensorboard
 
-Tensorboard is really useful for monitoring experiments and seeing how your generative deep learning model training is progressing.
+Tensorboard is really useful for monitoring experiments and seeing how your model training is progressing.
 
-To launch Tensorboard, run the following script (from outside the container), replacing `<CHAPTER>` with the required chapter (e.g. `03_vae`) and `<EXAMPLE>` with the required example (e.g. `02_vae_fashion`).
+To launch Tensorboard, run the following script (from outside the container):
+* `<CHAPTER>` - the required chapter (e.g. `03_vae`)
+* `<EXAMPLE>` - the required example (e.g. `02_vae_fashion`)
 
 ```
 bash scripts/tensorboard.sh <CHAPTER> <EXAMPLE>

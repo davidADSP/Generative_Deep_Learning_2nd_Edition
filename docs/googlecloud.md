@@ -63,7 +63,7 @@ gcloud compute ssh <VM_NAME>
 
 The first time you connect, it will ask if you want to install NVIDIA drivers - select 'yes'.
 
-To start coding on the VM, I then installing VSCode from https://code.visualstudio.com/download, which is a modern Interactive Development Environment (IDE) through which you can easily access you virtual machine and manipulate the file system.
+To start coding on the VM, I recommend installing VSCode from https://code.visualstudio.com/download, which is a modern Interactive Development Environment (IDE) through which you can easily access you virtual machine and manipulate the file system.
 
 Make sure you have the Remote SSH extension installed (see https://code.visualstudio.com/blogs/2019/10/03/remote-ssh-tips-and-tricks).
 
