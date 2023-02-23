@@ -2,8 +2,8 @@
 
 The official code repository for the second edition of the O'Reilly book *Generative Deep Learning: Teaching Machines to Paint, Write, Compose and Play*.
 
-https://learning.oreilly.com/library/view/generative-deep-learning/9781492041931/
-https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1492041947/ref=sr_1_1
+https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/
+https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1098134184/
 
 <img src="assets/book_cover.png" width="300px">
 
