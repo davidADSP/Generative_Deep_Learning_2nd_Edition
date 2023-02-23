@@ -9,7 +9,7 @@ https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1098134184/
 
 ## 📖 Book Chapters
 
-Below is a outline of the book chapters, with links to relevant notebook folders in the codebase.
+Below is a outline of the book chapters:
 
 Part I: Introduction to Generative Deep Learning
 
