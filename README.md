@@ -102,7 +102,8 @@ The notebooks that accompany the book are available in the `/notebooks` folder, 
 ### Downloading data
 
 The codebase comes with an in-built data downloader helper script.
-Use the helper script as follows, choosing one of the named datasets below (from outside the container):
+
+Run the data downloader as follows (from outside the container), choosing one of the named datasets below:
 
 ```
 bash scripts/download.sh [faces, bricks, recipes, flowers, wines, cellosuites, chorales]
