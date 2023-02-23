@@ -41,7 +41,7 @@ Below is a outline of the book chapters:
 
 To download some of the datasets for the book, you will need a Kaggle account and an API token. To use the Kaggle API:
 
-1. Sign up for a Kaggle account at https://www.kaggle.com.
+1. Sign up for a [Kaggle account](https://www.kaggle.com).
 2. Go to the 'Account' tab of your user profile
 3. Select 'Create API Token'. This will trigger the download of `kaggle.json`, a file containing your API credentials.
 
@@ -133,6 +133,6 @@ To set up a virtual machine with GPU in Google Cloud Platform, follow the instru
 
 ### Other resources
 
-Some of the examples in this book are adapted from the excellent open source implementations that are available through the Keras website (https://keras.io/examples/generative/). I highly recommend you check out this resource as new models and examples are constantly being added.
+Some of the examples in this book are adapted from the excellent open source implementations that are available through the [Keras website](https://keras.io/examples/generative/). I highly recommend you check out this resource as new models and examples are constantly being added.
 
 
