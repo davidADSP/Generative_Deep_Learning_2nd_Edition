@@ -5,7 +5,7 @@ The official code repository for the second edition of the O'Reilly book *Genera
 https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/
 https://www.amazon.com/Generative-Deep-Learning-Teaching-Machines/dp/1098134184/
 
-<img src="assets/book_cover.png" width="300px">
+<img src="img/book_cover.png" width="300px">
 
 ## 📖 Book Chapters
 
