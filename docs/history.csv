@@ -1,0 +1,85 @@
+﻿Name,Paper Date,paper,hide,type,parameters
+LSTM,01/11/1997,http://www.bioinf.jku.at/publications/older/2604.pdf,1,Autoregressive / Transformer,
+VAE,20/12/2013,https://arxiv.org/abs/1312.6114,0,Variational Autoencoder,
+Encoder Decoder,03/06/2014,https://arxiv.org/abs/1406.1078,1,Autoregressive / Transformer,
+GAN,10/06/2014,https://arxiv.org/abs/1406.2661,0,Generative Adversarial Network,
+Attention,01/09/2014,https://arxiv.org/abs/1409.0473,1,General,
+GRU,03/09/2014,https://arxiv.org/abs/1409.1259,0,Autoregressive / Transformer,
+CGAN,06/11/2014,https://arxiv.org/abs/1411.1784,0,Generative Adversarial Network,
+Diffusion Process,12/03/2015,https://arxiv.org/abs/1503.03585,1,Energy-Based / Diffusion Models,
+UNet,18/05/2015,https://arxiv.org/abs/1505.04597,0,General,
+Neural Style,26/08/2015,https://arxiv.org/abs/1508.06576,1,General,
+DCGAN,19/11/2015,https://arxiv.org/abs/1511.06434,0,Generative Adversarial Network,
+ResNet,10/12/2015,https://arxiv.org/abs/1512.03385,0,General,
+VAE-GAN,31/12/2015,https://arxiv.org/abs/1512.09300,0,Variational Autoencoder,
+Self Attention,25/01/2016,https://arxiv.org/abs/1601.06733,1,Autoregressive / Transformer,
+PixelRNN,25/01/2016,https://arxiv.org/abs/1601.06759,0,Autoregressive / Transformer,
+RealNVP,27/05/2016,https://arxiv.org/abs/1605.08803v3,0,Normalizing Flow,
+PixelCNN,16/06/2016,https://arxiv.org/abs/1606.05328,0,Autoregressive / Transformer,
+pix2pix,21/11/2016,https://arxiv.org/abs/1611.07004,0,Generative Adversarial Network,
+Stack GAN,10/12/2016,https://arxiv.org/abs/1612.03242,1,Generative Adversarial Network,
+PixelCNN++,19/01/2017,https://arxiv.org/abs/1701.05517,0,Autoregressive / Transformer,
+WGAN,26/01/2017,https://arxiv.org/abs/1701.07875,0,Generative Adversarial Network,
+CycleGAN,30/03/2017,https://arxiv.org/abs/1703.10593,0,Generative Adversarial Network,
+WGAN GP,31/03/2017,https://arxiv.org/abs/1704.00028,1,Generative Adversarial Network,
+Transformers,12/06/2017,https://arxiv.org/abs/1706.03762,0,Autoregressive / Transformer,
+MuseGAN,19/09/2017,https://arxiv.org/abs/1709.06298,0,Generative Adversarial Network,
+ProGAN,27/10/2017,https://arxiv.org/abs/1710.10196,0,Generative Adversarial Network,
+VQ-VAE,02/11/2017,https://arxiv.org/abs/1711.00937v2,0,Variational Autoencoder,
+World Models,27/03/2018,https://arxiv.org/abs/1803.10122,0,Variational Autoencoder,
+SAGAN,21/05/2018,https://arxiv.org/abs/1805.08318v2,0,Generative Adversarial Network,
+GPT,11/06/2018,https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf,0,Autoregressive / Transformer,0.117
+GLOW,09/07/2018,https://arxiv.org/abs/1807.03039,0,Normalizing Flow,
+Universal Transformer,10/07/2018,https://arxiv.org/abs/1807.03819,1,Autoregressive / Transformer,
+BigGAN,28/09/2018,https://arxiv.org/abs/1809.11096,0,Generative Adversarial Network,
+FFJORD,02/10/2018,https://arxiv.org/abs/1810.01367,0,Normalizing Flow,
+BERT,11/10/2018,https://arxiv.org/abs/1810.04805,0,Autoregressive / Transformer,
+StyleGAN,12/12/2018,https://arxiv.org/abs/1812.04948,0,Generative Adversarial Network,
+Music Transformer,12/12/2018,https://arxiv.org/abs/1809.04281,0,Autoregressive / Transformer,
+GPT-2,14/02/2019,https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf,0,Autoregressive / Transformer,1.5
+MuseNet,25/04/2019,https://openai.com/blog/musenet/,0,Autoregressive / Transformer,
+VQ-VAE-2,02/06/2019,https://arxiv.org/abs/1906.00446v1,0,Variational Autoencoder,
+NCSN,12/07/2019,https://arxiv.org/abs/1907.05600,0,Energy-Based / Diffusion Models,
+T5,23/10/2019,https://arxiv.org/abs/1910.10683,0,Autoregressive / Transformer,11
+StyleGAN2,03/12/2019,https://arxiv.org/abs/1912.04958,0,Generative Adversarial Network,
+NeRF,19/03/2020,https://arxiv.org/abs/2003.08934,0,General,
+GPT-3,28/05/2020,https://arxiv.org/abs/2005.14165,0,Autoregressive / Transformer,175
+DDPM,19/06/2020,https://arxiv.org/abs/2006.11239,0,Energy-Based / Diffusion Models,
+DDIM,06/10/2020,https://arxiv.org/abs/2010.02502,0,Energy-Based / Diffusion Models,
+Vision Transformer,22/10/2020,https://arxiv.org/abs/2010.11929,0,Autoregressive / Transformer,
+VQ-GAN,17/12/2020,https://arxiv.org/abs/2012.09841,0,Generative Adversarial Network,
+DALL.E,24/02/2021,https://arxiv.org/abs/2102.12092,0,Multimodal Models,12
+CLIP,26/02/2021,https://arxiv.org/abs/2103.00020,0,Multimodal Models,
+GPT-Neo,21/03/2021,https://github.com/EleutherAI/gpt-neo,0,Autoregressive / Transformer,2.7
+GPT-J,10/06/2021,https://github.com/kingoflolz/mesh-transformer-jax,0,Autoregressive / Transformer,6
+StyleGAN3,23/06/2021,https://arxiv.org/abs/2106.12423,0,Generative Adversarial Network,
+Codex,07/07/2021,https://arxiv.org/abs/2107.03374,0,Autoregressive / Transformer,
+ViT VQ-GAN,09/10/2021,https://arxiv.org/abs/2110.04627,0,Generative Adversarial Network,
+Megatron-Turing NLG,11/10/2021,https://developer.nvidia.com/blog/using-deepspeed-and-megatron-to-train-megatron-turing-nlg-530b-the-worlds-largest-and-most-powerful-generative-language-model/,0,Autoregressive / Transformer,530
+Gopher,08/12/2021,https://arxiv.org/abs/2112.11446,0,Autoregressive / Transformer,280
+GLIDE,20/12/2021,https://arxiv.org/abs/2112.10741,0,Multimodal Models,5
+Latent Diffusion,20/12/2021,https://arxiv.org/abs/2112.10752,0,Energy-Based / Diffusion Models,
+LaMDA,20/01/2022,https://arxiv.org/abs/2201.08239,0,Autoregressive / Transformer,137
+StyleGAN-XL,01/02/2022,https://arxiv.org/abs/2202.00273v2,0,Generative Adversarial Network,0
+GPT-NeoX,02/02/2022,https://github.com/EleutherAI/gpt-neox,0,Autoregressive / Transformer,20
+Chinchilla,29/03/2022,https://arxiv.org/abs/2203.15556v1,0,Autoregressive / Transformer,70
+PaLM,05/04/2022,https://arxiv.org/abs/2204.02311,0,Autoregressive / Transformer,540
+DALL.E 2,13/04/2022,https://arxiv.org/abs/2204.06125,0,Multimodal Models,3.5
+Flamingo,29/04/2022,https://arxiv.org/abs/2204.14198,0,Multimodal Models,80
+OPT,02/05/2022,https://arxiv.org/abs/2205.01068,0,Autoregressive / Transformer,175
+Imagen,23/05/2022,https://arxiv.org/abs/2205.11487,0,Multimodal Models,4.6
+Parti,22/06/2022,https://arxiv.org/abs/2206.10789,0,Multimodal Models,20
+BLOOM,16/07/2022,https://arxiv.org/abs/2211.05100,0,Autoregressive / Transformer,176
+Stable Diffusion,22/08/2022,https://stability.ai/blog/stable-diffusion-public-release,0,Multimodal Models,0.89
+ChatGPT,30/11/2022,https://chat.openai.com/,0,Autoregressive / Transformer,
+MUSE,02/01/2023,https://arxiv.org/abs/2301.00704,0,Multimodal Models,3
+MusicLM,26/01/2023,https://arxiv.org/abs/2301.11325,0,Multimodal Models,
+Dreamix,02/02/2023,https://arxiv.org/pdf/2302.01329.pdf,0,Multimodal Models,
+Toolformer,09/02/2023,https://arxiv.org/pdf/2302.04761.pdf,0,Autoregressive / Transformer,
+ControlNet,10/02/2023,https://arxiv.org/abs/2302.05543,0,Multimodal Models,
+LLaMA,24/02/2023,https://arxiv.org/abs/2302.13971,0,Autoregressive / Transformer,65
+PaLM-E,06/03/2023,https://arxiv.org/abs/2303.03378,0,Multimodal Models,562
+Visual ChatGPT,08/03/2023,https://arxiv.org/abs/2303.04671,0,Multimodal Models,
+Alpaca,13/03/2023,https://github.com/tatsu-lab/stanford_alpaca,1,Autoregressive / Transformer,
+GPT-4,16/03/2023,https://cdn.openai.com/papers/gpt-4.pdf,0,Multimodal Models,
+Luminous,14/04/2022,https://www.aleph-alpha.com/luminous,0,Autoregressive / Transformer,
