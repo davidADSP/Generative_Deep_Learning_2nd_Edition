@@ -33,7 +33,7 @@ GLOW,09/07/2018,https://arxiv.org/abs/1807.03039,0,Normalizing Flow,
 Universal Transformer,10/07/2018,https://arxiv.org/abs/1807.03819,1,Autoregressive / Transformer,
 BigGAN,28/09/2018,https://arxiv.org/abs/1809.11096,0,Generative Adversarial Network,
 FFJORD,02/10/2018,https://arxiv.org/abs/1810.01367,0,Normalizing Flow,
-BERT,11/10/2018,https://arxiv.org/abs/1810.04805,0,Autoregressive / Transformer,
+BERT,11/10/2018,https://arxiv.org/abs/1810.04805,1,Autoregressive / Transformer,
 StyleGAN,12/12/2018,https://arxiv.org/abs/1812.04948,0,Generative Adversarial Network,
 Music Transformer,12/12/2018,https://arxiv.org/abs/1809.04281,0,Autoregressive / Transformer,
 GPT-2,14/02/2019,https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf,0,Autoregressive / Transformer,1.5
