@@ -86,7 +86,9 @@ def get_midi_note(sample_note, sample_duration):
 
     elif sample_note == "rest":
         new_note = music21.note.Rest()
-        new_note.duration = music21.duration.Duration(float(Fraction(sample_duration)))
+        new_note.duration = music21.duration.Duration(
+            float(Fraction(sample_duration))
+        )
         new_note.storedInstrument = music21.instrument.Violoncello()
 
     elif "." in sample_note:
@@ -94,19 +96,25 @@ def get_midi_note(sample_note, sample_duration):
         chord_notes = []
         for current_note in notes_in_chord:
             n = music21.note.Note(current_note)
-            n.duration = music21.duration.Duration(float(Fraction(sample_duration)))
+            n.duration = music21.duration.Duration(
+                float(Fraction(sample_duration))
+            )
             n.storedInstrument = music21.instrument.Violoncello()
             chord_notes.append(n)
         new_note = music21.chord.Chord(chord_notes)
 
     elif sample_note == "rest":
         new_note = music21.note.Rest()
-        new_note.duration = music21.duration.Duration(float(Fraction(sample_duration)))
+        new_note.duration = music21.duration.Duration(
+            float(Fraction(sample_duration))
+        )
         new_note.storedInstrument = music21.instrument.Violoncello()
 
     elif sample_note != "START":
         new_note = music21.note.Note(sample_note)
-        new_note.duration = music21.duration.Duration(float(Fraction(sample_duration)))
+        new_note.duration = music21.duration.Duration(
+            float(Fraction(sample_duration))
+        )
         new_note.storedInstrument = music21.instrument.Violoncello()
 
     return new_note
@@ -161,14 +169,17 @@ class SinePositionEncoding(keras.layers.Layer):
         min_freq = tf.cast(1 / self.max_wavelength, dtype=self.compute_dtype)
         timescales = tf.pow(
             min_freq,
-            tf.cast(2 * (tf.range(hidden_size) // 2), self.compute_dtype) / tf.cast(hidden_size, self.compute_dtype),
+            tf.cast(2 * (tf.range(hidden_size) // 2), self.compute_dtype)
+            / tf.cast(hidden_size, self.compute_dtype),
         )
         angles = tf.expand_dims(position, 1) * tf.expand_dims(timescales, 0)
         # even indices are sine, odd are cosine
         cos_mask = tf.cast(tf.range(hidden_size) % 2, self.compute_dtype)
         sin_mask = 1 - cos_mask
         # embedding shape is [seq_length, hidden_size]
-        positional_encodings = tf.sin(angles) * sin_mask + tf.cos(angles) * cos_mask
+        positional_encodings = (
+            tf.sin(angles) * sin_mask + tf.cos(angles) * cos_mask
+        )
 
         return tf.broadcast_to(positional_encodings, input_shape)
 

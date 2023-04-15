@@ -89,7 +89,9 @@ def add_vector_to_images(data, vae, feature_vec):
 
         for factor in factors:
             changed_z_point = z_points[i] + feature_vec * factor
-            changed_image = vae.decoder.predict(np.array([changed_z_point]), verbose=0)[0]
+            changed_image = vae.decoder.predict(
+                np.array([changed_z_point]), verbose=0
+            )[0]
 
             sub = fig.add_subplot(n_to_show, len(factors) + 1, counter)
             sub.axis("off")
@@ -120,7 +122,9 @@ def morph_faces(data, vae):
 
     for factor in factors:
         changed_z_point = z_points[0] * (1 - factor) + z_points[1] * factor
-        changed_image = vae.decoder.predict(np.array([changed_z_point]), verbose=0)[0]
+        changed_image = vae.decoder.predict(
+            np.array([changed_z_point]), verbose=0
+        )[0]
         sub = fig.add_subplot(1, len(factors) + 2, counter)
         sub.axis("off")
         sub.imshow(changed_image)
