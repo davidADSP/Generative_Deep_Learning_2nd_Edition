@@ -35,7 +35,7 @@ Below is a outline of the book chapters:
 13. Multimodal Models
 14. Conclusion
 
-## Star History
+## 🌟 Star History
 
 <img src="https://api.star-history.com/svg?repos=davidADSP/Generative_Deep_Learning_2nd_Edition&type=Date" width="500px">
 
@@ -104,7 +104,7 @@ http://localhost:8888
 
 The notebooks that accompany the book are available in the `/notebooks` folder, organized by chapter and example.
 
-### Downloading data
+## 🏞️ Downloading data
 
 The codebase comes with an in-built data downloader helper script.
 
@@ -114,7 +114,7 @@ Run the data downloader as follows (from outside the container), choosing one of
 bash scripts/download.sh [faces, bricks, recipes, flowers, wines, cellosuites, chorales]
 ```
 
-### Tensorboard
+## 📈 Tensorboard
 
 Tensorboard is really useful for monitoring experiments and seeing how your model training is progressing.
 
@@ -131,11 +131,11 @@ Tensorboard will be available in your local browser on the port specified in you
 http://localhost:6006
 ```
 
-### Using a cloud virtual machine
+## Using a cloud virtual machine
 
 To set up a virtual machine with GPU in Google Cloud Platform, follow the instructions in the [Google Cloud README](./docs/googlecloud.md) file in this repository.
 
-### Other resources
+## Other resources
 
 Some of the examples in this book are adapted from the excellent open source implementations that are available through the [Keras website](https://keras.io/examples/generative/). I highly recommend you check out this resource as new models and examples are constantly being added.
 
