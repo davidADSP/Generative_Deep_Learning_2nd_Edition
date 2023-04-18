@@ -37,7 +37,7 @@ Below is a outline of the book chapters:
 
 ## Star History
 
-<img src="https://api.star-history.com/svg?repos=davidADSP/Generative_Deep_Learning_2nd_Edition&type=Date" width="300px">
+<img src="https://api.star-history.com/svg?repos=davidADSP/Generative_Deep_Learning_2nd_Edition&type=Date" width="500px">
 
 ## 🚀 Getting Started
 
