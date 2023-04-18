@@ -129,11 +129,11 @@ Tensorboard will be available in your local browser on the port specified in you
 http://localhost:6006
 ```
 
-## Using a cloud virtual machine
+## ☁️ Using a cloud virtual machine
 
 To set up a virtual machine with GPU in Google Cloud Platform, follow the instructions in the [Google Cloud README](./docs/googlecloud.md) file in this repository.
 
-## Other resources
+## 📦 Other resources
 
 Some of the examples in this book are adapted from the excellent open source implementations that are available through the [Keras website](https://keras.io/examples/generative/). I highly recommend you check out this resource as new models and examples are constantly being added.
 
