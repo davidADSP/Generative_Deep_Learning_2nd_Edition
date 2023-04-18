@@ -80,8 +80,6 @@ If you do have a GPU that you wish to use, run the following command:
 docker-compose -f docker-compose-gpu.yml build
 ```
 
-## 🏃‍♀️ Running the Examples
-
 ### Running the container
 
 If you do not have a GPU, run the following command:
