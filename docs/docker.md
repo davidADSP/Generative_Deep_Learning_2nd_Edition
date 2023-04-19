@@ -6,7 +6,7 @@ In this section, we will explain the reason for using Docker and how to get star
 
 The overall structure of the codebase and how Docker can be used to interact with it is shown below.
 
-<img src="img/structure.png">
+<img src="../img/structure.png">
 
 We will run through everything in the diagram in this `README`.
 
