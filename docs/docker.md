@@ -39,7 +39,6 @@ FROM ubuntu:20.04 #<1>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update #<2>
-RUN apt-get -y upgrade
 RUN apt-get install -y unzip graphviz curl musescore3 python3-pip
 
 RUN pip install --upgrade pip #<3>
@@ -48,13 +47,13 @@ WORKDIR /app #<4>
 
 COPY ./requirements.txt /app #<5>
 RUN pip install -r /app/requirements.txt
+
 # Hack to get around tensorflow-io issue - https://github.com/tensorflow/io/issues/1755
 RUN pip install tensorflow-io
 RUN pip uninstall -y tensorflow-io
 
 COPY /notebooks/. /app/notebooks #<6>
 COPY /scripts/. /app/scripts
-COPY /setup.cfg /app
 
 ENV PYTHONPATH="${PYTHONPATH}:/app" #<7>
 ```
