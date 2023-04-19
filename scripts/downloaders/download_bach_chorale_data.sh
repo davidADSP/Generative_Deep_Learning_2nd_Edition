@@ -1,4 +1,4 @@
-docker-compose exec app bash -c "
+docker compose exec app bash -c "
 mkdir /app/data/bach-chorales/
 cd /app/data/bach-chorales/ && 
 echo 'Downloading...' && 

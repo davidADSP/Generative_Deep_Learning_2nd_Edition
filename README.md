@@ -64,20 +64,20 @@ KAGGLE_KEY=<your_kaggle_key>
 
 This codebase is designed to be run with [Docker](https://docs.docker.com/get-docker/).
 
-If you've never used Docker before, don't worry! I have included a guide to Docker in the [Docker README](./docs/docker.md) file in this repository. This includes a full run through of why Docker is awesome and a brief guide to the `Dockerfile` and `docker-compose.yml` for this project.
+If you've never used Docker before, don't worry! I have included a guide to Docker in the [Docker README](./docs/docker.md) file in this repository. This includes a full run through of why Docker is awesome and a brief guide to the `Dockerfile` and `docker compose.yml` for this project.
 
 ### Building the Docker image
 
 If you do not have a GPU, run the following command:
 
 ```
-docker-compose build
+docker compose build
 ```
 
 If you do have a GPU that you wish to use, run the following command:
 
 ```
-docker-compose -f docker-compose-gpu.yml build
+docker compose -f docker compose-gpu.yml build
 ```
 
 ### Running the container
@@ -85,13 +85,13 @@ docker-compose -f docker-compose-gpu.yml build
 If you do not have a GPU, run the following command:
 
 ```
-docker-compose up
+docker compose up
 ```
 
 If you do have a GPU that you wish to use, run the following command:
 
 ```
-docker-compose -f docker-compose-gpu.yml up
+docker compose -f docker compose-gpu.yml up
 ```
 
 Jupyter will be available in your local browser, on the port specified in your env file - for example
