@@ -83,7 +83,7 @@ Lastly, you'll need to make sure that Docker Compose is installed on the virtual
 
 ```
 sudo apt-get update
-sudo apt-get install docker compose-plugin
+sudo apt-get install docker-compose-plugin
 ```
 
 Now you can build the image and run the container, using the GPU-specific commands discussed in the main `README` of this codebase.

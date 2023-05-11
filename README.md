@@ -77,7 +77,7 @@ docker compose build
 If you do have a GPU that you wish to use, run the following command:
 
 ```
-docker compose -f docker compose-gpu.yml build
+docker compose -f docker-compose-gpu.yml build
 ```
 
 ### Running the container
@@ -91,7 +91,7 @@ docker compose up
 If you do have a GPU that you wish to use, run the following command:
 
 ```
-docker compose -f docker compose-gpu.yml up
+docker compose -f docker-compose-gpu.yml up
 ```
 
 Jupyter will be available in your local browser, on the port specified in your env file - for example
