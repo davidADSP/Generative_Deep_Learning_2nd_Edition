@@ -68,11 +68,11 @@ ENV PYTHONPATH="${PYTHONPATH}:/app" #<7>
 
 You can see how the Dockerfile can be thought of as a recipe for building a particular run-time environment. The magic of Docker is that you do not need to worry about installing a resource intensive virtual machine on your computer - Docker is lightweight and allows you to build an environment template purely using code.
 
-A running version of an image is called a *container*. You can think of the image as like a cookie cutter, that can be used to create a particular cookie (the container). There is one other file that we need to look at before we finally get to build our image and run the container - the docker compose.yaml file.
+A running version of an image is called a *container*. You can think of the image as like a cookie cutter, that can be used to create a particular cookie (the container). There is one other file that we need to look at before we finally get to build our image and run the container - the docker-compose.yaml file.
 
-## 🎼 The docker compose.yaml file
+## 🎼 The docker-compose.yaml file
 
-Docker Compose is an extension to Docker that allows you to define how you would like your containers to run, through a simple YAML file, called 'docker compose.yaml'.
+Docker Compose is an extension to Docker that allows you to define how you would like your containers to run, through a simple YAML file, called 'docker-compose.yaml'.
 
 For example, you can specify which ports and folders should be mapped between your machine and the container. Folder mapping allows the container to treat folders on your machine as if they were folders inside the container. Therefore any changes you make to mapped files and folders on your machine will be immediately reflected inside the container. Port mapping will forward any traffic on a local port through to the container. For example, we could map port 8888 on your local machine to port 8888 in the container, so that if you visit `localhost:8888` in your browser, you will see Jupyter, which is running on port 8888 inside the container. The ports do not have have to be the same - for example you could map port 8000 to port 8888 in the container if you wanted.
 
@@ -103,7 +103,7 @@ services: #<2>
 1. This specifies the version of Docker Compose to use (currently version 3)
 2. Here, we specify the services we wish to launch
 3. We only have one service, which we call `app`
-4. Here, we tell Docker where to find the Dockerfile (the same directory as the docker compose.yaml file)
+4. Here, we tell Docker where to find the Dockerfile (the same directory as the docker-compose.yaml file)
 5. This allows us to open up an interactive command line inside the container, if we wish
 6. Here, we map folders on our local machine (e.g. ./data), to folders inside the container (e.g. /app/data).
 7. Here, we specify the port mappings - the dollar sign means that it will use the ports as specified in the `.env` file (e.g. `JUPYTER_PORT=8888`)
@@ -128,13 +128,13 @@ docker compose up
 
 You should see that Docker launches the Jupyter notebook server within the container and provides you with a URL to the running server.
 
-Because we have mapped port 8888 in the container to port 8888 on your machine, you can simply navigate to the address starting `http://127.0.0.1:8888/lab?token=` into a web browser and you should see the running Jupyter server. The folders that we mapped across in the `docker compose.yaml` file should be visible on the left hand side.
+Because we have mapped port 8888 in the container to port 8888 on your machine, you can simply navigate to the address starting `http://127.0.0.1:8888/lab?token=` into a web browser and you should see the running Jupyter server. The folders that we mapped across in the `docker-compose.yaml` file should be visible on the left hand side.
 
 Congratulations! You now have a functioning Docker container that you can use to start working through the Generative Deep Learning codebase! To stop running the Jupyter server, you use `Ctrl-C` and to bring down the running container, you use the command `docker compose down`. Because the volumes are mapped, you won't lose any of your work that you save whilst working in the Jupyter notebooks, even if you bring the container down.
 
 ## ⚡️ Using a GPU
 
-The default `Dockerfile` and `docker compose.yaml` file assume that you do not want to use a local GPU to train your models. If you do have a GPU that you wish to use (for example, you are using a cloud VM), I have provided two extra files called `Dockerfile-gpu` and `docker-compose.gpu.yml` files that can be used in place of the default files.
+The default `Dockerfile` and `docker-compose.yaml` file assume that you do not want to use a local GPU to train your models. If you do have a GPU that you wish to use (for example, you are using a cloud VM), I have provided two extra files called `Dockerfile-gpu` and `docker-compose.gpu.yml` files that can be used in place of the default files.
 
 For example, to build an image that includes support for GPU, use the command shown below:
 

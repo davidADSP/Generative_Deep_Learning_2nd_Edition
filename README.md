@@ -64,7 +64,7 @@ KAGGLE_KEY=<your_kaggle_key>
 
 This codebase is designed to be run with [Docker](https://docs.docker.com/get-docker/).
 
-If you've never used Docker before, don't worry! I have included a guide to Docker in the [Docker README](./docs/docker.md) file in this repository. This includes a full run through of why Docker is awesome and a brief guide to the `Dockerfile` and `docker compose.yml` for this project.
+If you've never used Docker before, don't worry! I have included a guide to Docker in the [Docker README](./docs/docker.md) file in this repository. This includes a full run through of why Docker is awesome and a brief guide to the `Dockerfile` and `docker-compose.yml` for this project.
 
 ### Building the Docker image
 
