@@ -134,16 +134,16 @@ Congratulations! You now have a functioning Docker container that you can use to
 
 ## ⚡️ Using a GPU
 
-The default `Dockerfile` and `docker compose.yaml` file assume that you do not want to use a local GPU to train your models. If you do have a GPU that you wish to use (for example, you are using a cloud VM), I have provided two extra files called `Dockerfile-gpu` and `docker-compose-gpu.yaml` files that can be used in place of the default files.
+The default `Dockerfile` and `docker compose.yaml` file assume that you do not want to use a local GPU to train your models. If you do have a GPU that you wish to use (for example, you are using a cloud VM), I have provided two extra files called `Dockerfile-gpu` and `docker-compose.gpu.yml` files that can be used in place of the default files.
 
 For example, to build an image that includes support for GPU, use the command shown below:
 
 ```
-docker compose -f docker-compose-gpu.yml build
+docker compose -f docker-compose.gpu.yml build
 ```
 
 To run this image, use the following command:
 
 ```
-docker compose -f docker-compose-gpu.yml up
+docker compose -f docker-compose.gpu.yml up
 ```
