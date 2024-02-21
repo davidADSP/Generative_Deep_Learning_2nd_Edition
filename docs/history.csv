@@ -33,7 +33,7 @@ GLOW,09/07/2018,https://arxiv.org/abs/1807.03039,0,Normalizing Flow,
 Universal Transformer,10/07/2018,https://arxiv.org/abs/1807.03819,1,Autoregressive / Transformer,
 BigGAN,28/09/2018,https://arxiv.org/abs/1809.11096,0,Generative Adversarial Network,
 FFJORD,02/10/2018,https://arxiv.org/abs/1810.01367,0,Normalizing Flow,
-BERT,11/10/2018,https://arxiv.org/abs/1810.04805,1,Autoregressive / Transformer,
+BERT,11/10/2018,https://arxiv.org/abs/1810.04805,0,Autoregressive / Transformer,0.345
 StyleGAN,12/12/2018,https://arxiv.org/abs/1812.04948,0,Generative Adversarial Network,
 Music Transformer,12/12/2018,https://arxiv.org/abs/1809.04281,0,Autoregressive / Transformer,
 GPT-2,14/02/2019,https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf,0,Autoregressive / Transformer,1.5
@@ -81,6 +81,11 @@ LLaMA,24/02/2023,https://arxiv.org/abs/2302.13971,0,Autoregressive / Transformer
 PaLM-E,06/03/2023,https://arxiv.org/abs/2303.03378,0,Multimodal Models,562
 Visual ChatGPT,08/03/2023,https://arxiv.org/abs/2303.04671,0,Multimodal Models,
 Alpaca,13/03/2023,https://github.com/tatsu-lab/stanford_alpaca,1,Autoregressive / Transformer,
-GPT-4,16/03/2023,https://cdn.openai.com/papers/gpt-4.pdf,0,Multimodal Models,
+GPT-4,16/03/2023,https://cdn.openai.com/papers/gpt-4.pdf,0,Autoregressive / Transformer,1000
 Luminous,14/04/2022,https://www.aleph-alpha.com/luminous,0,Autoregressive / Transformer,
 Flan-T5,20/10/2022,https://arxiv.org/abs/2210.11416,0,Autoregressive / Transformer,11
+Falcon,17/03/2023,https://falconllm.tii.ae/,0,Autoregressive / Transformer,40
+PaLM 2,10/05/2023,https://ai.google/discover/palm2/,0,Autoregressive / Transformer,340
+PanGu-Σ,20/03/2023,https://arxiv.org/abs/2303.10845,1,Autoregressive / Transformer,1085
+GPT-3.5,30/11/2022,,0,Autoregressive / Transformer,175
+Llama 2,17/07/2023,,0,Autoregressive / Transformer,70
