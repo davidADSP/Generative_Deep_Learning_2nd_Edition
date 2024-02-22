@@ -3,6 +3,7 @@ FROM tensorflow/tensorflow:2.10.1-gpu
 RUN rm /etc/apt/sources.list.d/cuda.list
 
 RUN apt-get update
+RUN add-apt-repository ppa:mscore-ubuntu/mscore3-stable
 RUN apt-get install -y unzip graphviz curl musescore3
 
 RUN pip install --upgrade pip
